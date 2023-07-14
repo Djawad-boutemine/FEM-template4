@@ -24,6 +24,10 @@ h1, h2 {
     font-family: var(--main-font);
 }
 
+h1 { 
+    font-size: 1.8em ;
+}
+
 header {
     background-color: var(--cl-whity);
     display: flex;
@@ -59,7 +63,7 @@ header .bottom .text {
 }
 
 header .bottom .text p {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .start {
@@ -73,11 +77,11 @@ header .bottom .text p {
 main {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start ;
+    justify-content: flex-start;
     align-items: center;
     height: 230vh;
-    margin-top : 3em ;
-    gap : 3em ;
+    margin-top: 3em;
+    gap: 3em;
     position: relative;
 }
 
@@ -90,15 +94,15 @@ main>article {
     border-radius: 1em;
 }
 
-main > article  p {
-    color : var(--cl-grey) ;
-    font-size: 1em ;
+main>article p {
+    color: var(--cl-grey);
+    font-size: 1em;
     display: inline-block;
-    width : 18em ; 
+    width: 18em;
 }
 
-main > article h2 {
-    margin : 1em ;
+main>article h2 {
+    margin: 1em;
 }
 
 main .question {
@@ -107,17 +111,42 @@ main .question {
     text-align: center;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center ;
+    align-items: center;
     justify-content: space-evenly;
-    background-color: white ;
-}
-footer {
-    background-color: var(--cl-dark-green);
-    padding-top: 10em ;
-    color : white ; 
-    font-size : 1.2em ;
+    background-color: white;
 }
 
+footer {
+    background-color: var(--cl-dark-green);
+    padding: 8em 1.5em 1.5em;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+}
+
+footer .media img {
+    width : 2em ;
+    aspect-ratio: 1/1;
+}
+
+footer .contact > div {
+    display: grid;
+    grid-template-columns: 1fr 9fr ;
+    margin :  1em 0  ; 
+}
+footer .contact {
+    display:  flex ;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+}
+footer .media .icons {
+    display: flex;
+    justify-content: center ;
+}
+footer .media > p {
+    font-size: 0.8em ;
+    padding-top: 1em ;
+}
 @media (max-width : 450px) {
     header {
         height: 100vh;
@@ -160,17 +189,35 @@ footer {
     main>article img {
         width: 70%;
     }
+
     main .question {
         width: 90%;
-        height : 12em ;
+        height: 12em;
         position: absolute;
-        bottom : -6em ;
-        left : 5% ;
+        bottom: -6em;
+        left: 5%;
     }
-    main .question  h2 {
+
+    main .question h2 {
         font-size: 1.2em;
     }
+
     footer {
-        height: 120vh;
+        height: 115vh;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        gap : 1.5em ;
+    }
+    footer .contact  img {
+        transform: translateY(0.4em);
+    }
+    footer .informations  a {
+        display: block;
+        color : white ;
+        text-decoration: none ;
+        margin : 0.5em  0 ;
+    }
+    footer .media .icons  img {
+        margin-left : 0.5em ;
     }
 }
