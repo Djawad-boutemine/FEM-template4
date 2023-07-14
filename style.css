@@ -24,13 +24,14 @@ h1, h2 {
     font-family: var(--main-font);
 }
 
-h1 { 
-    font-size: 1.8em ;
-}
+
 
 header {
     background-color: var(--cl-whity);
     display: flex;
+    height: 100vh;
+    flex-flow: column nowrap;
+    gap: 4em;
 }
 
 header>.top {
@@ -58,13 +59,11 @@ header>.bottom {
 
 header .bottom .text {
     display: flex;
+    flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
 }
 
-header .bottom .text p {
-    font-size: 1.1em;
-}
+
 
 .start {
     background-color: var(--cl-pink);
@@ -73,6 +72,7 @@ header .bottom .text p {
     padding: 0.7em 0;
     box-shadow: 3px 4px 20px 0 rgba(0, 0, 0, 0.2);
 }
+
 
 main {
     display: flex;
@@ -96,14 +96,10 @@ main>article {
 
 main>article p {
     color: var(--cl-grey);
-    font-size: 1em;
     display: inline-block;
-    width: 18em;
 }
 
-main>article h2 {
-    margin: 1em;
-}
+
 
 main .question {
     border-radius: 1em;
@@ -118,42 +114,56 @@ main .question {
 
 footer {
     background-color: var(--cl-dark-green);
-    padding: 8em 1.5em 1.5em;
     color: white;
     font-size: 1.2em;
-    display: flex;
 }
 
 footer .media img {
-    width : 2em ;
+    width: 2em;
     aspect-ratio: 1/1;
 }
 
-footer .contact > div {
+footer .contact>div {
     display: grid;
-    grid-template-columns: 1fr 9fr ;
-    margin :  1em 0  ; 
+    grid-template-columns: 1fr 9fr;
+    margin: 1em 0;
 }
+
 footer .contact {
-    display:  flex ;
+    display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
 }
+
+footer .informations a {
+    display: block;
+    color: white;
+    text-decoration: none ;
+    margin: 0.5em 0;
+}
+
 footer .media .icons {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
-footer .media > p {
-    font-size: 0.8em ;
-    padding-top: 1em ;
+
+footer .contact img {
+    transform: translateY(0.4em);
 }
+
+footer .media>p {
+    font-size: 0.8em;
+    padding-top: 1em;
+}
+
+footer .media .icons img {
+    margin-left: 0.5em;
+}
+
 @media (max-width : 450px) {
     header {
-        height: 100vh;
         background-image: url(bg-hero-mobile.svg);
         padding: 2em 1.5em;
-        flex-flow: column nowrap;
-        gap: 4em;
         text-align: center;
     }
 
@@ -161,6 +171,14 @@ footer .media > p {
         width: 6.5em;
         height: 1.2em;
         display: inline-block;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    header .bottom .text p {
+        font-size: 1.1em;
     }
 
     header .top>.button {
@@ -175,9 +193,8 @@ footer .media > p {
     }
 
     header .bottom .text {
-        flex-flow: column nowrap;
         height: 23em;
-
+        justify-content: space-around;
     }
 
     main>article {
@@ -188,6 +205,15 @@ footer .media > p {
 
     main>article img {
         width: 70%;
+    }
+
+    main article p {
+        font-size: 1em;
+        width: 18em;
+    }
+
+    main>article h2 {
+        margin: 1em;
     }
 
     main .question {
@@ -206,18 +232,126 @@ footer .media > p {
         height: 115vh;
         flex-flow: column nowrap;
         justify-content: space-evenly;
-        gap : 1.5em ;
+        gap: 1.5em;
+        display: flex;
+        padding: 8em 1.5em 1.5em;
     }
-    footer .contact  img {
-        transform: translateY(0.4em);
+
+}
+
+@media (min-width : 451px) {
+    header {
+        padding: 4em;
     }
-    footer .informations  a {
-        display: block;
-        color : white ;
-        text-decoration: none ;
-        margin : 0.5em  0 ;
+
+    header .bottom {
+        flex-flow: row nowrap;
+        align-items: center;
     }
-    footer .media .icons  img {
-        margin-left : 0.5em ;
+
+    header .bottom img {
+        width: 52em;
+    }
+
+    header .bottom .text {
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 65%;
+    }
+
+    header h1 {
+        width: 13em;
+        font-size: 3.2em;
+    }
+
+    header .bottom .text p {
+        font-size: 1.3em;
+        width: 29em;
+    }
+
+    header .bottom .button {
+        text-align: center;
+    }
+
+    main>article {
+        height: 60vh;
+        width: 90%;
+    }
+
+    main article>img {
+        width: 28%;
+        aspect-ratio: 1.2/1;
+    }
+
+    .groth, .users {
+        flex-flow: row-reverse nowrap;
+    }
+
+    .conversations {
+        flex-flow: row nowrap;
+    }
+
+    main article .text {
+        width: 35%;
+        text-align: left;
+    }
+
+    main article p {
+        font-size: 1.3em;
+        margin-top: 1em;
+    }
+
+    main .question {
+        width: 50%;
+        height: 12em;
+        position: absolute;
+        bottom: -6em;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5em;
+    }
+
+    footer {
+        height: 70vh;
+        padding: 10em 6em 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 4fr;
+    }
+
+    footer>svg {
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+
+    .contact {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 90%;
+    }
+
+    .informations {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center ;
+        align-content: space-evenly
+    }
+
+    .media {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-column: 3/4;
+        grid-row: 2/3;
+        justify-content: center;
+    }
+
+    .button:hover {
+        opacity : 0.5 ;
+    }
+    footer .informations a:hover {
+        text-decoration: underline;
+        text-decoration-color : white ;
     }
 }
